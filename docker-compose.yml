@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    gpsloggerreceiver:
+        image: node:8.9.4-alpine
+        user: "node"
+        working_dir: /home/node/app
+        environment:
+          - NODE_ENV=production
+        volumes:
+          - ./:/home/node/app
+        ports:
+          - "3000:3000"
+        command: "npm start"
